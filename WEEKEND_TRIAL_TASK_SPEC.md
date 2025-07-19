@@ -56,8 +56,9 @@ Organize your code with clear separation:
 
 Key principles:
 - UI layer only accesses data through adapter outputs, never raw text
-- Use generic node rendering - don't implement specific node types
-- All nodes can look the same, just display different labels/properties
+- Implement 3-5 specific node types with custom rendering
+- Use a generic fallback renderer for all other node types
+- Show design skills through the specific node implementations
 
 ## 7. Tech Constraints & Libraries
 
@@ -97,39 +98,51 @@ A sample n8n workflow is provided, but for deeper understanding of the formats:
 - Use your professional judgment to find appropriate references
 - Demonstrate your ability to work with unfamiliar data formats
 
-**Important Note on Node Types**: You are NOT expected to implement specific node types. Use generic node rendering that displays the node's type, label, and basic properties. For example, all nodes can be rendered the same way visually, just showing different labels and metadata.
+**Important Note on Node Types**: Implement custom rendering for 3-5 common node types (see suggestions below) to demonstrate design skills. All other node types should use a generic fallback renderer. This keeps the scope manageable while showing your UI/UX abilities.
+
+Suggested node types to implement custom rendering:
+- **Start/Trigger nodes** - Special appearance to show workflow entry points
+- **HTTP Request nodes** - Show URL or method
+- **Database nodes** - Display query type or table name
+- **Conditional/Switch nodes** - Show branching logic visually
+- **Generic nodes** - Fallback for all other types
 
 ## What You Need to Build
 
 1. **Choose a workflow platform** - Pick any automation platform (n8n, Make, Zapier, etc.)
 2. **Implement adapter** - Parse workflows from your chosen platform into the canonical format
-3. **Generic graph display** - Use React Flow with generic nodes (all nodes can look the same)
+3. **Graph display with custom nodes** - Use React Flow with:
+   - 3-5 custom node types (e.g., trigger, HTTP, database, conditional)
+   - Generic fallback renderer for all other node types
 4. **Drag functionality** - Update node positions when dragged
 5. **Export** - Save the modified workflow back to original format
-
-Important: Use generic node rendering. Don't try to implement specific node types - just show node type/label/properties in a consistent way.
 
 Optional enhancements:
 - Support multiple platforms
 - Format auto-detection
 - Node inspector for details
 - Error handling
+- Additional custom node types
 
 ## 10. Deliverables Checklist
 
 ### Required
 - [ ] Working app that runs locally
 - [ ] Import workflows from your chosen platform
-- [ ] Display workflow as interactive graph
+- [ ] Display workflow as interactive graph with:
+  - [ ] 3-5 custom node type renderers
+  - [ ] Generic fallback for other node types
 - [ ] Drag nodes to reposition them
 - [ ] Export modified workflow back to original format
 - [ ] Document which platform you chose and why
 
 ### Bonus Points
+- [ ] Additional custom node types beyond the required 3-5
 - [ ] Support multiple workflow platforms
 - [ ] Auto-detect workflow format
 - [ ] Node inspector (click for details)
 - [ ] Clean, extensible architecture
+- [ ] Creative node visualizations
 
 ## 11. Documentation
 

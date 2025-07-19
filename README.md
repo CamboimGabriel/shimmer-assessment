@@ -11,11 +11,13 @@ npm run dev
 
 Build a workflow editor that can:
 1. Import workflows from your chosen platform (n8n, Make, Zapier, etc.)
-2. Display them as an interactive graph using generic nodes
+2. Display them as an interactive graph with:
+   - 3-5 custom node type renderers (e.g., trigger, HTTP, database)
+   - Generic fallback renderer for all other types
 3. Allow dragging nodes to new positions
 4. Export the modified workflow back to original format
 
-**Important**: Use generic node rendering - all nodes can look the same, just show different labels/properties. Don't implement specific node types.
+**Balance**: Implement a few specific node types to show design skills, but use generic rendering for the rest to keep scope manageable.
 
 **Full requirements: See `WEEKEND_TRIAL_TASK_SPEC.md`**
 
