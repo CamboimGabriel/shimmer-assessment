@@ -10,10 +10,12 @@ npm run dev
 ## Your Task
 
 Build a workflow editor that can:
-1. Import n8n JSON workflows
-2. Display them as an interactive graph
+1. Import workflows from your chosen platform (n8n, Make, Zapier, etc.)
+2. Display them as an interactive graph using generic nodes
 3. Allow dragging nodes to new positions
-4. Export the modified workflow back to JSON
+4. Export the modified workflow back to original format
+
+**Important**: Use generic node rendering - all nodes can look the same, just show different labels/properties. Don't implement specific node types.
 
 **Full requirements: See `WEEKEND_TRIAL_TASK_SPEC.md`**
 

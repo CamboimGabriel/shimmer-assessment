@@ -49,12 +49,15 @@ Focus on making these core flows work well for your chosen platform.
 
 Organize your code with clear separation:
 - **Adapters**: Pure logic, no React imports
-- **Graph components**: React Flow visualization
+- **Graph components**: React Flow visualization with generic nodes
 - **UI components**: Inspector, layout, etc.
 - **Services**: Utilities, validation, telemetry
 - **Tests**: Unit and integration tests
 
-Key principle: UI layer only accesses data through adapter outputs, never raw text.
+Key principles:
+- UI layer only accesses data through adapter outputs, never raw text
+- Use generic node rendering - don't implement specific node types
+- All nodes can look the same, just display different labels/properties
 
 ## 7. Tech Constraints & Libraries
 
@@ -90,18 +93,21 @@ The starter repository at https://github.com/ShimmerAI/shimmer-assessment provid
 ### Research & Reference
 
 A sample n8n workflow is provided, but for deeper understanding of the formats:
-- Research n8n's workflow structure through their documentation
-- Look up Make (formerly Integromat) and YAML workflow formats if implementing those adapters
-- Use your professional judgment to find appropriate references and documentation
+- Research workflow structures through documentation
+- Use your professional judgment to find appropriate references
 - Demonstrate your ability to work with unfamiliar data formats
+
+**Important Note on Node Types**: You are NOT expected to implement specific node types. Use generic node rendering that displays the node's type, label, and basic properties. For example, all nodes can be rendered the same way visually, just showing different labels and metadata.
 
 ## What You Need to Build
 
 1. **Choose a workflow platform** - Pick any automation platform (n8n, Make, Zapier, etc.)
-2. **Implement adapter** - Parse workflows from your chosen platform
-3. **Graph display** - Use React Flow to visualize the workflow
+2. **Implement adapter** - Parse workflows from your chosen platform into the canonical format
+3. **Generic graph display** - Use React Flow with generic nodes (all nodes can look the same)
 4. **Drag functionality** - Update node positions when dragged
 5. **Export** - Save the modified workflow back to original format
+
+Important: Use generic node rendering. Don't try to implement specific node types - just show node type/label/properties in a consistent way.
 
 Optional enhancements:
 - Support multiple platforms
