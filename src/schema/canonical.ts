@@ -10,10 +10,12 @@ export interface Node {
   id: string;
   type: string;
   label: string;
+  name?: string;
   ports: Port[];
+  parameters?: Record<string, any>;
   position?: { x: number; y: number };
   config?: Record<string, any>;
-  raw?: any;              // source fragment
+  raw?: any; // source fragment
   warnings?: string[];
 }
 
@@ -23,7 +25,7 @@ export interface Port {
   direction: PortDirection;
 }
 
-export type PortDirection = 'in' | 'out';
+export type PortDirection = "in" | "out";
 
 export interface Edge {
   id: string;
